@@ -233,5 +233,6 @@ def main():
 
     separator.load_model(model_filename=args.model_filename)
 
-    output_files = separator.separate(audio_files, custom_output_names=args.custom_output_names)
-    logger.info(f"Separation complete! Output file(s): {' '.join(output_files)}")
+    for audio_file in audio_files:
+        output_files = separator.separate(audio_files, custom_output_names=args.custom_output_names)
+        logger.info(f"Separation complete! Output file(s): {' '.join(output_files)}")
